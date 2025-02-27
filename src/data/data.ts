@@ -41,14 +41,14 @@ export const IconTechStack2 = [
 export const words = [
   {
     text: "Junior",
-    className: "text-red-500 dark:text-red700",
+    className: "text-2xl sm:text-4xl text-Teal-2 dark:text-Teal-2",
   },
   {
     text: "Front-End",
-    className: "text-red-500 dark:text-red700",
+    className: "text-2xl sm:text-4xl text-Teal-2 dark:text-Teal-2 ",
   },
   {
     text: "Developer",
-    className: "text-red-500 dark:text-red700",
+    className: "text-2xl sm:text-4xl text-Teal-2 dark:text-Teal-2",
   },
 ];

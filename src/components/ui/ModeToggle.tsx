@@ -21,22 +21,22 @@ export function ModeToggle() {
           {theme === "dark" ? (
             <div className="flex gap-2 font-bold">
               <p>Dark Mode</p>
-              <MoonIcon className="text-yellow-500" />
+              <MoonIcon className="text-[#5C8374] " />
             </div>
           ) : theme === "light" ? (
             <div className="flex gap-2 font-bold">
               <p className="text-black">Ligth Mode</p>
-              <SunIcon className="text-yellow-500" />
+              <SunIcon className="text-[#5C8374] " />
             </div>
           ) : systemTheme === "dark" ? (
             <div className="flex gap-2 font-bold">
               <p>Dark Mode</p>
-              <MoonIcon className="text-yellow-500" />
+              <MoonIcon className="text-[#5C8374] " />
             </div>
           ) : (
             <div className="flex gap-2 font-bold">
               <p className="text-black">Ligth Mode</p>
-              <SunIcon className="text-yellow-500" />
+              <SunIcon className="text-[#5C8374] " />
             </div>
           )}
         </div>

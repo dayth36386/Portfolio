@@ -95,10 +95,10 @@ const FloatingDockDesktop = ({
   const mouseX = useMotionValue(Infinity);
   return (
     <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
+      onMouseMove={(e) => mouseX.set(e.pageY)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
+        "mx-auto hidden md:flex flex-col h-auto gap-4 items-center rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 py-3",
         className,
       )}
     >
@@ -123,9 +123,9 @@ function IconContainer({
   const ref = useRef<HTMLDivElement>(null);
 
   const distance = useTransform(mouseX, (val) => {
-    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    const bounds = ref.current?.getBoundingClientRect() ?? { y: 0, height: 0 };
 
-    return val - bounds.x - bounds.width / 2;
+    return val - bounds.y - bounds.height / 2;
   });
 
   const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
