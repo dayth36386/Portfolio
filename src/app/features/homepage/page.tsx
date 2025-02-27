@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import StackIcon from "tech-stack-icons";
 
 import LetTrain from "../../../../public/img/92009.jpg";
@@ -252,12 +253,18 @@ export function HomePageRender() {
 
   return (
     <>
-      <Home />
-      <About />
-      <div className="w-full">
+      <div id="home">
+        <Home />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="experience" className="w-full">
         <Timeline data={data} />
       </div>
-      <Contact />
+      <div id="contact">
+        <Contact />
+      </div>
     </>
   );
 }

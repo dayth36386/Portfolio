@@ -25,8 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto} antialiased`}>
-        <div className="hidden lg:block"></div>
+      <body className={`select-none ${roboto} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
