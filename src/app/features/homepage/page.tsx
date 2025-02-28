@@ -27,7 +27,7 @@ export function HomePageRender() {
       title: "Nov 4, 2024 to Mar 14, 2025",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 items-center flex gap-2">
             Internship Role: Full-Stack Developer SSL Logistics Co., Ltd.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -69,7 +69,7 @@ export function HomePageRender() {
       title: "Thailand Cyber Top Talent 2023",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 items-center flex gap-2">
             Thailand Cyber Top Talent 2023
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
@@ -86,7 +86,7 @@ export function HomePageRender() {
         <div className="flex flex-col gap-10">
           <div>
             <div className="flex justify-between">
-              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 items-center flex gap-2">
                 Startup Thailand League 2023
               </p>
               <a
@@ -189,7 +189,7 @@ export function HomePageRender() {
         <div className="flex flex-col gap-10">
           <div>
             <div className="flex justify-between">
-              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+              <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 items-center flex gap-2">
                 Startup Thailand League 2022
               </p>
               <a
