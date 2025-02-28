@@ -69,7 +69,7 @@ export function Contact() {
               <div className="flex gap-1 items-center">
                 <IoIosWarning className="w-4 h-4 text-red-500" />
                 <p className="text-red-500 text-sm dark:text-red-500">
-                  {getError("message")}
+                  {getError("name")}
                 </p>
               </div>
             )}
@@ -93,7 +93,7 @@ export function Contact() {
               <div className="flex gap-1 items-center">
                 <IoIosWarning className="w-4 h-4 text-red-500" />
                 <p className="text-red-500 text-sm dark:text-red-500">
-                  {getError("message")}
+                  {getError("email")}
                 </p>
               </div>
             )}
