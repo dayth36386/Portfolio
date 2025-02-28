@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { z } from "zod";
 
 import { useToast } from "@/components/ui/use-toast";
@@ -11,8 +11,20 @@ export default function useHomepage() {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState(false);
   const [errors, setErrors] = useState<z.ZodIssue[]>([]);
+  const [countdown, setCountdown] = useState<number>(() => {
+    const savedTime = localStorage.getItem("countdown");
+    const savedTimestamp = localStorage.getItem("countdownTimestamp");
+    const now = Math.floor(Date.now() / 1000);
+
+    if (savedTime && savedTimestamp) {
+      const remainingTime =
+        parseInt(savedTime, 10) - (now - parseInt(savedTimestamp, 10));
+      return remainingTime > 0 ? remainingTime : 0;
+    }
+    return 0;
+  });
+
   const clearFieldError = async <T extends keyof typeof FormEmailSchema.shape>(
     field: T,
     value: unknown,
@@ -61,13 +73,18 @@ export default function useHomepage() {
                 title: "Email sent",
                 description: "Your email has been sent successfully.",
               });
-              setStatus(true);
+              const newCountdown = 60;
+              setCountdown(newCountdown);
+              localStorage.setItem("countdown", newCountdown.toString());
+              localStorage.setItem(
+                "countdownTimestamp",
+                Math.floor(Date.now() / 1000).toString(),
+              );
             } else {
               toast({
                 title: "Email not sent",
                 description: "Your email has not been sent successfully.",
               });
-              setStatus(false);
             }
           });
           setData({
@@ -83,11 +100,25 @@ export default function useHomepage() {
       }
     }
   };
+
+  useEffect(() => {
+    if (countdown > 0) {
+      const timer = setInterval(() => {
+        setCountdown((prev) => {
+          const newTime = prev - 1;
+          localStorage.setItem("countdown", newTime.toString());
+          return newTime;
+        });
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [countdown]);
+
   const { toast } = useToast();
   return {
+    countdown,
     data,
     setData,
-    status,
     errors,
     setErrors,
     clearFieldError,

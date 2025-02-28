@@ -12,13 +12,14 @@ import { cn } from "@/lib/utils";
 export function Contact() {
   const {
     data,
+    countdown,
     setData,
-    status,
     setErrors,
     clearFieldError,
     getError,
     sendEmail,
   } = useHomepage();
+
   return (
     <div className="lg:grid lg:grid-cols-5 xl:grid-cols-5 w-full dark:bg-black dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative bg-transparent backdrop-blur-md transition-colors">
       <div className="xl:col-span-3 lg:col-span-3 hidden lg:block p-20">
@@ -128,9 +129,9 @@ export function Contact() {
               sendEmail();
             }}
             className="px-8 py-2 rounded-md bg-Teal-1 text-white font-bold transition duration-200 hover:bg-Teal-2 hover:text-white border border-transparent hover:border-Teal-2"
-            disabled={status}
+            disabled={countdown > 0}
           >
-            Send
+            {countdown > 0 ? `Wait (${countdown}s) to resend` : "Send Email"}
           </Button>
         </div>
       </div>
