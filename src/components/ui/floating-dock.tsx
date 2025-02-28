@@ -1,5 +1,6 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { TbSunMoon } from "react-icons/tb";
 import {
   AnimatePresence,
   motion,
@@ -8,7 +9,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Link from "next/link";
+import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
@@ -18,7 +19,7 @@ export const FloatingDock = ({
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; id: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -34,10 +35,27 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; id: string }[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  useEffect(() => {
+    items.forEach((item) => {
+      sectionRefs.current[item.id] = document.getElementById(item.id);
+    });
+  }, []);
+
+  const scrollToSection =
+    (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      const section = sectionRefs.current[id];
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+  const { setTheme, theme } = useTheme();
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -63,24 +81,33 @@ const FloatingDockMobile = ({
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
-                <Link
+                <a
+                  onClick={scrollToSection(item.id)}
                   href={item.href}
                   key={item.title}
                   className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
                 >
                   <div className="h-4 w-4">{item.icon}</div>
-                </Link>
+                </a>
               </motion.div>
             ))}
           </motion.div>
         )}
       </AnimatePresence>
-      <button
-        onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
-      >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
-      </button>
+      <div className="flex flex-col gap-2">
+        <button
+          onClick={() => setOpen(!open)}
+          className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
+        >
+          <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        </button>
+        <button
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
+        >
+          <TbSunMoon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        </button>
+      </div>
     </div>
   );
 };
@@ -165,9 +192,8 @@ function IconContainer({
   });
 
   const [hovered, setHovered] = useState(false);
-
   return (
-    <Link href={href}>
+    <a href={href}>
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -194,6 +220,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </Link>
+    </a>
   );
 }
