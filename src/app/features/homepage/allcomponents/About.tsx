@@ -24,7 +24,7 @@ export default function About() {
           team, improved SEO, refactored code, and optimized performance.
         </p>
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-base text-justify relative z-10">
-          Always eager to learn and improve, I strive to create better user
+          I always eager to learn and improve, I strive to create better user
           experiences. Let's connect!
         </p>
       </div>

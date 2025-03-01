@@ -51,7 +51,7 @@ export function HomePageRender() {
       title: "Jun 24, 2024 ",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 items-center flex gap-2">
             IoT Smart Mushroom Farm Installation Klong Pak Lak Community
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
