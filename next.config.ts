@@ -1,5 +1,10 @@
+import dotenv from "dotenv";
 import type { NextConfig } from "next";
+import path from "path";
 import { Configuration } from "webpack";
+
+const __dirname = path.dirname(__filename);
+dotenv.config({ path: path.resolve(__dirname, "./env/.env.local") });
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -13,6 +18,12 @@ const nextConfig: NextConfig = {
       "media2.giphy.com",
       "media4.giphy.com",
     ],
+  },
+  env: {
+    NEXT_PUBLIC_EMAILJS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+    NEXT_PUBLIC_EMAILJS_KEY: process.env.NEXT_PUBLIC_EMAILJS_KEY,
   },
   webpack(config: Configuration) {
     if (!config.module) {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { z } from "zod";
+import { set, z } from "zod";
 
 import { useToast } from "@/components/ui/use-toast";
 import { FormEmailSchema } from "@/utils/validate/formEmail";
@@ -11,6 +11,7 @@ export default function useHomepage() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<boolean>(false);
   const [errors, setErrors] = useState<z.ZodIssue[]>([]);
   const [countdown, setCountdown] = useState<number>(() => {
     const savedTime = localStorage.getItem("countdown");
@@ -73,6 +74,7 @@ export default function useHomepage() {
                 title: "Email sent",
                 description: "Your email has been sent successfully.",
               });
+              setStatus(true);
               const newCountdown = 60;
               setCountdown(newCountdown);
               localStorage.setItem("countdown", newCountdown.toString());
@@ -112,6 +114,9 @@ export default function useHomepage() {
       }, 1000);
       return () => clearInterval(timer);
     }
+    if (countdown === 0) {
+      setStatus(false);
+    }
   }, [countdown]);
 
   const { toast } = useToast();
@@ -124,5 +129,6 @@ export default function useHomepage() {
     clearFieldError,
     getError,
     sendEmail,
+    status,
   };
 }
