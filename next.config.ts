@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       "camo.githubusercontent.com",
       "media2.giphy.com",
       "media4.giphy.com",
+      "i.postimg.cc",
     ],
   },
   env: {
