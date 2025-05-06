@@ -14,7 +14,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio Dechawiawtwong Detchang",
+  title: "Portfolio Dechawiwatwong Detchang",
   description: "JUNIOR FRONTEND DEVELOPER",
 };
 
