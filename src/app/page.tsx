@@ -1,7 +1,48 @@
 import React from "react";
+import Head from "next/head";
 
 import { HomePageRender } from "./features/homepage/page";
 
 export default function page() {
-  return <HomePageRender />;
+  return (
+    <>
+      <Head>
+        <title>Dechawiwatwong Detchang</title>
+        <meta name="title" content="Dechawiwatwong Detchang" />
+        <meta
+          name="description"
+          content="I'm a Junior Front-End Developer passionate about building scalable web applications with Next.js, Node.js, and MongoDB. With hands-on experience in UX/UI design, I've participated in startup competitions and IoT projects. I'm currently pursuing a Bachelor of Science and Technology at Kasem Bundit University (2021 - 2025)."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:title" content="Dechawiwatwong Detchang" />
+        <meta
+          property="og:description"
+          content="I'm a Junior Front-End Developer passionate about building scalable web applications with Next.js, Node.js, and MongoDB. With hands-on experience in UX/UI design, I've participated in startup competitions and IoT projects. I'm currently pursuing a Bachelor of Science and Technology at Kasem Bundit University (2021 - 2025)."
+        />
+        <meta
+          property="og:image"
+          content="https://metatags.io/images/meta-tags.png"
+        />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Dechawiwatwong Detchang" />
+        <meta
+          property="twitter:description"
+          content="I'm a Junior Front-End Developer passionate about building scalable web applications with Next.js, Node.js, and MongoDB. With hands-on experience in UX/UI design, I've participated in startup competitions and IoT projects. I'm currently pursuing a Bachelor of Science and Technology at Kasem Bundit University (2021 - 2025)."
+        />
+        <meta
+          property="twitter:image"
+          content="https://metatags.io/images/meta-tags.png"
+        />
+      </Head>
+      <HomePageRender />
+    </>
+  );
 }
