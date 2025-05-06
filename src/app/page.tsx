@@ -22,6 +22,10 @@ export default function page() {
           rel="image_src"
           href="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
         />
+        <link
+          rel="icon"
+          href="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
+        />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://porfolio-gdyo.vercel.app/" />
@@ -50,7 +54,6 @@ export default function page() {
           content="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
         />
       </Head>
-
       <HomePageRender />
     </>
   );
