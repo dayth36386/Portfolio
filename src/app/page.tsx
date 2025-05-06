@@ -18,7 +18,7 @@ export default function page() {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:url" content="https://porfolio-gdyo.vercel.app/" />
         <meta property="og:title" content="Dechawiwatwong Detchang" />
         <meta
           property="og:description"
@@ -31,7 +31,10 @@ export default function page() {
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta
+          property="twitter:url"
+          content="https://porfolio-gdyo.vercel.app/"
+        />
         <meta property="twitter:title" content="Dechawiwatwong Detchang" />
         <meta
           property="twitter:description"
