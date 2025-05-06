@@ -26,7 +26,7 @@ export default function page() {
         />
         <meta
           property="og:image"
-          content="https://metatags.io/images/meta-tags.png"
+          content="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
         />
 
         {/* Twitter */}
@@ -42,7 +42,7 @@ export default function page() {
         />
         <meta
           property="twitter:image"
-          content="https://metatags.io/images/meta-tags.png"
+          content="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
         />
       </Head>
       <HomePageRender />
