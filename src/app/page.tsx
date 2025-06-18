@@ -21,7 +21,6 @@ export default function page() {
         <link
           rel="image_src"
           href="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
-          er
         />
         <link
           rel="icon"
