@@ -29,7 +29,7 @@ export default function About() {
         </p>
       </div>
       <div className="flex gap-4 relative z-10">
-        <a
+        {/* <a
           href="/pdf/cv-dechawiwatwongdetchang.pdf"
           download
           className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px]"
@@ -39,7 +39,7 @@ export default function About() {
             <FileTextIcon className="w-6 h-6" />
             <p>Download CV</p>
           </span>
-        </a>
+        </a> */}
         <a
           href="/pdf/Resume-Dechawiwatwong-Detchang.pdf"
           download
