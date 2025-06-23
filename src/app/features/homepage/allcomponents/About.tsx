@@ -44,6 +44,7 @@ export default function About() {
           href="/pdf/Resume-Dechawiwatwong-Detchang.pdf"
           download
           className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px]"
+          x
         >
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#040D12_0%,#93B1A6_100%,#040D12_50%)]" />
           <span className="inline-flex h-full w-full px-5 gap-2 cursor-pointer items-center justify-center rounded-full bg-[#040D12] py-1 text-sm font-medium text-white backdrop-blur-3xl">
