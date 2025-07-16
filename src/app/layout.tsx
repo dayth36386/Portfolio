@@ -14,8 +14,30 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio Dechawiwatwong Detchang",
+  title: "Dechawiwatwong Detchang",
   description: "JUNIOR FRONTEND DEVELOPER",
+  openGraph: {
+    title: "Dechawiwatwong Detchang",
+    description:
+      "I'm a Junior Front-End Developer passionate about building scalable web applications...",
+    url: "https://porfolio-gdyo.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "https://porfolio-gdyo.vercel.app/img/webhomepage.png",
+        width: 1200,
+        height: 630,
+        alt: "Dechawiwatwong Detchang",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dechawiwatwong Detchang",
+    description:
+      "I'm a Junior Front-End Developer passionate about building scalable web applications...",
+    images: ["https://porfolio-gdyo.vercel.app/img/webhomepage.png"],
+  },
 };
 
 export default function RootLayout({
