@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 
-import WebPNG from "../../public/img/webhomepage.png";
 import { HomePageRender } from "./features/homepage/page";
 
 export default function page() {
