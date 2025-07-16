@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
+import WebPNG from "../../public/img/webhomepage.png";
 import { HomePageRender } from "./features/homepage/page";
 
 export default function page() {
@@ -14,18 +15,9 @@ export default function page() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
 
-        <meta
-          name="image"
-          content="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
-        />
-        <link
-          rel="image_src"
-          href="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
-        />
-        <link
-          rel="icon"
-          href="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
-        />
+        <meta name="image" content="../../public/img/webhomepage.png" />
+        <link rel="image_src" href="../../public/img/webhomepage.png" />
+        <link rel="icon" href="../../public/img/webhomepage.png" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://porfolio-gdyo.vercel.app/" />
@@ -34,10 +26,7 @@ export default function page() {
           property="og:description"
           content="I'm a Junior Front-End Developer passionate about building scalable web applications..."
         />
-        <meta
-          property="og:image"
-          content="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
-        />
+        <meta property="og:image" content="../../public/img/webhomepage.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta
@@ -51,7 +40,7 @@ export default function page() {
         />
         <meta
           property="twitter:image"
-          content="https://i.postimg.cc/ZY20Tp08/Screenshot-2568-05-06-at-09-22-34.png"
+          content="../../public/img/webhomepage.png"
         />
       </Head>
       <HomePageRender />
