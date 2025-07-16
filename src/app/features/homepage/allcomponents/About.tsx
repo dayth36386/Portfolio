@@ -15,7 +15,7 @@ export default function About() {
           web applications with Next.js, Node.js, and MongoDB. With hands-on
           experience in UX/UI design, I've participated in startup competitions
           and IoT projects. I'm currently pursuing a Bachelor of Science and
-          Technology at Kasem Bundit University (2021 - present).
+          Technology at Kasem Bundit University (2021 - 2025).
         </p>
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-base relative z-10 text-justify">
           During my internship as a Full-Stack Developer at SSL Logistics Co.,
